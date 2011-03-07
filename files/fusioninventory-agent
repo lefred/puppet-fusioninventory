@@ -1,0 +1,22 @@
+#
+# Fusion Inventory Agent Configuration File
+# used by hourly cron job used to override the fusioninventory-agent.cfg setup.
+#
+# Add tools directory if needed (tw_cli, hpacucli, ipssend, ...)
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+# Global options (debug for verbose log, rpc-trust-localhost for yum-plugin)
+FUSINVOPT='--debug --rpc-trust-localhost'
+# Mode, change to "cron" or "daemon" to activate
+# - none (default on install) no activity
+# - cron (inventory only) use the cron.hourly
+# - daemon (recommanded) use the service
+OCSMODE[0]=cron
+# OCS server URI
+# OCSSERVER[0]=your.ocsserver.name
+# corresponds with --local=/var/lib/fusioninventory-agent
+# OCSSERVER[0]=local
+# Wait before inventory (for cron mode)
+OCSPAUSE[0]=120
+# Administrative TAG (optional, must be filed before first inventory)
+OCSTAG[0]=Inuits Server
+
